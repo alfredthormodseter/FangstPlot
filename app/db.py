@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-engine = create_engine("postgresql+psycopg://fangst:fangst@localhost:5432/fangstplot")
+load_dotenv()
+
+DB_URL = os.environ["DB_URL"]
+engine = create_engine(DB_URL)
